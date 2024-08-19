@@ -1,0 +1,19 @@
+import axios from 'axios';
+
+const API_URL = 'http://localhost:8080/api';
+
+class ApiService {
+  getProducts() {
+    return axios.get(`${API_URL}/products`);
+  }
+
+  addProduct(product) {
+    return axios.post(`${API_URL}/products`, product);
+  }
+
+  getOrders() {
+    return axios.get(`${API_URL}/orders`);
+  }
+}
+
+export default new ApiService();
